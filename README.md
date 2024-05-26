@@ -1,7 +1,7 @@
 # Kaggle-Healthcare-Dataset
 This dataset is from Kaggle (https://www.kaggle.com/datasets/prasad22/healthcare-dataset).  It is simulated data.  The purpose is to practice, refine, and show my machine learning skills.  I really appreciate the heart behind the inspiration of the dataset, so I thought I would include it below:
 
-    The inspiration behind this dataset is rooted in the need for practical and diverse healthcare data for educational and research purposes. Healthcare data is often sensitive and subject   to privacy regulations, making it challenging to access for learning and experimentation. To address this gap, I have leveraged Python's Faker library to generate a dataset that mirrors the structure and attributes commonly found in healthcare records. By providing this synthetic data, I hope to foster innovation, learning, and knowledge sharing in the healthcare analytics domain.
+"The inspiration behind this dataset is rooted in the need for practical and diverse healthcare data for educational and research purposes. Healthcare data is often sensitive and subject   to privacy regulations, making it challenging to access for learning and experimentation. To address this gap, I have leveraged Python's Faker library to generate a dataset that mirrors the structure and attributes commonly found in healthcare records. By providing this synthetic data, I hope to foster innovation, learning, and knowledge sharing in the healthcare analytics domain."
 
 The purpose of this repository is to demonstrate machine learning skills by going through a dataset from online.
 
@@ -38,5 +38,3 @@ Given that I gathered this data from Kaggle, steps 1.) and 2.) will be skipped. 
 Data Cleaning
 
 We are looking for anything that may throw an issue - such as Null Values, NA's, or simply put bad data. In our case, it seems to be that this dataset was prepared before loading it onto Kaggle, but it's still good to go through the process and make sure nothing is overlooked.
-
-Below is an example of some code that I wrote to ascertain if there are any null values (which there are none):
