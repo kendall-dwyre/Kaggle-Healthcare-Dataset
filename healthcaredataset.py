@@ -50,6 +50,79 @@ plt.show()
 #df = pd.concat([diabetes.drop('category', axis=1), encoded_diabetes], axis=1)
 
 scaler = StandardScaler()
-scaled_features = scaler.fit_transform(healthcare.drop(columns=['Outcome']))
+scaled_features = scaler.fit_transform(healthcare.drop(columns=['Medical Condition']))
 scaled_healthcare = pd.DataFrame(scaled_features, columns = healthcare.columns[:-1])
-scaled_healthcare['Outcome'] = healthcare['Outcome']
+scaled_healthcare['Medical Condition'] = healthcare['Medical Condition']
+
+# Dropping our target variable
+X = healthcare.drop(columns=['Medical Condition'])
+y = healthcare['Medical Condition']
+
+# Splitting the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
+
+# We can look at some of the values
+#print(X_train)
+print(X_train.describe()) # Descriptive statistics
+#print(y_train)
+#print(X_test)
+#print(y_test)
+
+"""models = {
+    'Logistic Regression': LogisticRegression(max_iter=10000),
+    'Decision Tree': DecisionTreeClassifier(),
+    'Random Forest': RandomForestClassifier(),
+    'Gradient Boosting': GradientBoostingClassifier(),
+    'Support Vector Machine': SVC(),
+    'K-Nearest Neighbors': KNeighborsClassifier()
+}
+
+# Function to evaluate models
+def evaluate_model(model, X_train, y_train, X_test, y_test):
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred)
+    recall = recall_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred)
+    return accuracy, precision, recall, f1
+
+# Evaluate each model and store results
+results = {}
+for model_name, model in models.items():
+    accuracy, precision, recall, f1 = evaluate_model(model, X_train, y_train, X_test, y_test)
+    results[model_name] = {'Accuracy': accuracy, 'Precision': precision, 'Recall': recall, 'F1 Score': f1}
+
+# Display the results
+results_df = pd.DataFrame(results).T
+print(results_df)
+"""
+
+models = {
+    'Logistic Regression': LogisticRegression(max_iter=10000),
+    'Decision Tree': DecisionTreeClassifier(),
+    'Random Forest': RandomForestClassifier(),
+    'Gradient Boosting': GradientBoostingClassifier(),
+    'Support Vector Machine': SVC(),
+    'K-Nearest Neighbors': KNeighborsClassifier()
+}
+
+# Function to evaluate models
+def evaluate_model(model, X_train, y_train, X_test, y_test):
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred)
+    recall = recall_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred)
+    return accuracy, precision, recall, f1
+
+# Evaluate each model and store results
+results = {}
+for model_name, model in models.items():
+    accuracy, precision, recall, f1 = evaluate_model(model, X_train, y_train, X_test, y_test)
+    results[model_name] = {'Accuracy': accuracy, 'Precision': precision, 'Recall': recall, 'F1 Score': f1}
+
+# Display the results
+results_df = pd.DataFrame(results).T
+print(results_df)
