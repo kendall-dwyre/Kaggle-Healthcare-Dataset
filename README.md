@@ -102,7 +102,6 @@ This project demonstrates the end-to-end process of working with healthcare data
 
 For any questions or suggestions, feel free to contact me:
 - **Name**: Kendall Dwyre
-- **Email**: ksdwyre@gmail.com
 - **LinkedIn**: [Kendall Dwyre LinkedIn](https://www.linkedin.com/in/kendall-dwyre/)
 - **GitHub**: [Kendall Dwyre GitHub](https://github.com/kendall-dwyre/)
 
